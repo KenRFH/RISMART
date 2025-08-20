@@ -79,9 +79,9 @@
 
     <!-- TEAM SLIDER SECTION -->
     <!-- TEAM SLIDER SECTION -->
-    <section class="w-full py-20 px-4  bg-yellow-500">
-        <h2 class="text-center text-4xl md:text-5xl font-bold mb-12 text-slate-800">RISMART TEAM</h2>
-        <div class="relative max-w-4xl mx-auto">
+    <section class="w-full py-20 bg-gradient-to-t from-yellow-500 via-blue-900 via-20 to-blue-950 h-[1000px]">
+
+        <div class="relative max-w-4xl mx-auto bg-blue-950 shadow-xl rounded-xl py-3 px-5 z-7">
             <div class="swiper team-swiper">
                 <div class="swiper-wrapper">
 
@@ -90,7 +90,7 @@
                         <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                             <!-- Text -->
                             <div class="md:w-3/5 order-2 md:order-1">
-                                <h3 class="text-2xl font-bold text-blue-900">
+                                <h3 class="text-2xl font-bold text-slate-100">
                                     Prof. Dr. Ika Barokah Suryaningsih, S.E., M.M., CPIA., CHRM., CRP., QIA.
                                 </h3>
                                 <p class="mt-4 text-lg text-white/70 leading-relaxed">
@@ -115,13 +115,13 @@
 
                     <!-- Slide 2 -->
                     <div class="swiper-slide">
-                        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 ">
                             <!-- Text -->
                             <div class="md:w-3/5 order-2 md:order-1">
-                                <h3 class="text-2xl font-bold text-gray-800">
+                                <h3 class="text-2xl font-bold text-slate-100">
                                     Prof. Dr. Sumani, S.E., M.Si., CRA.
                                 </h3>
-                                <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                                <p class="mt-4 text-lg text-white/70 leading-relaxed">
                                     "Virtual Reality (VR) is a computer-generated environment that simulates a real or
                                     imaginary world..."
                                 </p>
@@ -146,6 +146,10 @@
             </div>
         </div>
     </section>
+    <section class="bg-yellow-500 h-[1000px]">
+
+    </section>
+    {{-- <img src="{{asset('assets/wave.svg')}}" alt="" class="w-full h-1/2 block"> --}}
 
 
     <!-- Swiper CSS -->
