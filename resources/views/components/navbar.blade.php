@@ -1,4 +1,4 @@
-<nav class="fixed z-1000 bg-black/50 dark:bg-slate-800  dark:bg-opacity-30 backdrop-blur w-full p-4 text-white font-semibold">
+<nav class="fixed z-[9999] bg-black/50 dark:bg-slate-800 dark:bg-opacity-30 backdrop-blur w-full p-4 text-white font-semibold">
     <div class="flex justify-between items-center w-full max-w-7xl mx-auto">
         <div class="text-lg font-bold">Logo</div>
         <ul class="flex space-x-6">
@@ -8,5 +8,3 @@
         </ul>
     </div>
 </nav>
-
-

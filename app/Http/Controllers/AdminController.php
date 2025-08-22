@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index ()
+    public function dashboard ()
     {
         $articles = Artikel::select('id', 'judul', 'gambar', 'updated_at')
             ->orderBy('updated_at', 'desc')
