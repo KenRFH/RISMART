@@ -10,4 +10,6 @@ class C_Home extends Controller
     {
         return view('home.vr');
     }
+
+
 }

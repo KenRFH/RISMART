@@ -2,42 +2,91 @@
 
 @section('content')
     <!-- HERO SECTION -->
-    <div class="relative w-full h-screen overflow-hidden flex items-center justify-center">
-        <img src="{{ asset('assets/home2.png') }}"
-             alt="Hero Background"
-             class="absolute inset-0 w-full h-full object-cover -z-10" />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-blue-950 -z-10"></div>
+    <section class="relative w-full h-screen overflow-hidden">
+        <div class="swiper hero-swiper h-full">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                        <!-- Left Content -->
+                        <div class="flex flex-col justify-center p-10 bg-black text-white">
+                            <h3 class="text-sm font-semibold tracking-widest mb-4">SPOTLIGHT</h3>
+                            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                                Discover Indonesia's Iconic Treasures
+                            </h1>
+                            <p class="text-lg mb-6">
+                                Immerse yourself in Indonesia's vibrant culture through its unique handicrafts,
+                                rich traditions, and mouth-watering culinary delights.
+                            </p>
+                            <a href="#"
+                                class="inline-block px-6 py-3 border border-white text-white font-medium rounded-md hover:bg-white hover:text-black transition">
+                                Explore Indonesia’s Hallmark →
+                            </a>
+                        </div>
+                        <!-- Right Image -->
+                        <div class="relative">
+                            <img src="{{ asset('assets/jember.jpeg') }}" alt="Village"
+                                class="w-full h-full object-cover" />
+                            <div
+                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+                                <h2 class="text-xl font-semibold">5 Award-Winning Tourist Villages</h2>
+                                <p class="text-sm">Looking for something different to start your holiday?...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="relative z-10 text-center px-4">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold font-poppins text-white leading-tight drop-shadow-lg">
-                TIME TO <span class="text-yellow-400">SEE SOMEPLACE</span><br>
-                ON YOUR <span class="text-blue-400">SCREEN</span>
-            </h1>
-            <a href="{{ route('showVR') }}"
-               class="mt-8 inline-block bg-yellow-400 text-gray-900 text-sm sm:text-base font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-500 hover:scale-105 transition">
-                LET'S TRY ON
-            </a>
-            <p class="mt-8 text-gray-200 text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto font-light font-poppins">
-                RISMART — the ultimate platform that brings tourism to life through
-                <span class="font-semibold text-yellow-300">Virtual Reality (VR)</span> and
-                <span class="font-semibold text-blue-300">Augmented Reality (AR)</span>.
-            </p>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="grid grid-cols-1 md:grid-cols-2 h-full bg-black">
+                        <!-- Left Content -->
+                        <div class="flex flex-col justify-center p-10 bg-black text-white">
+                            <h3 class="text-sm font-semibold tracking-widest mb-4">SPOTLIGHT</h3>
+                            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                                Explore Wonderful Indonesia
+                            </h1>
+                            <p class="text-lg mb-6">
+                                From beaches to mountains, Indonesia offers endless natural wonders
+                                waiting to be explored.
+                            </p>
+                            <a href="#"
+                                class="inline-block px-6 py-3 border border-white text-white font-medium rounded-md hover:bg-white hover:text-black transition">
+                                Start Your Journey →
+                            </a>
+                        </div>
+                        <!-- Right Image -->
+                        <div class="relative">
+                            <img src="{{ asset('assets/unej.webp') }}" alt="Beach"
+                                class="w-full h-full object-cover" />
+                            <div
+                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent text-white">
+                                <h2 class="text-xl font-semibold">7 Tourism Awards</h2>
+                                <p class="text-sm">Indonesia is widely known to boast its cultural heritages...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination fraction -->
+            <div class="swiper-pagination !bottom-6 !left-10 !w-auto"></div>
+            <!-- Nav Buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-    </div>
+    </section>
 
     <!-- VR SECTION -->
-    <section class="w-full bg-blue-950 py-20 px-6">
+    <section class="w-full bg-white py-20 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="flex justify-center">
-                <img src="{{ asset('assets/vr2.png') }}"
-                     alt="VR Headset"
-                     class="w-full max-w-sm md:max-w-md object-cover">
+                <img src="{{ asset('assets/vr2.png') }}" alt="VR Headset" class="w-full max-w-sm md:max-w-md object-cover">
             </div>
             <div class="text-center md:text-left">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-amber-400">
                     What is <span class="text-purple-500">VR?</span>
                 </h2>
-                <p class="text-gray-300 text-lg leading-relaxed font-poppins">
+                <p class="text-black text-lg leading-relaxed font-poppins">
                     Virtual Reality (VR) is a computer-generated environment that simulates
                     a real or imaginary world, allowing users to interact with it as if
                     they were physically present. <br><br>
@@ -63,123 +112,83 @@
                 </p>
             </div>
             <div class="flex justify-center order-1 md:order-2">
-                <img src="{{ asset('assets/ar.png') }}"
-                     alt="AR Navigation"
-                     class="w-full max-w-sm md:max-w-md object-cover">
+                <img src="{{ asset('assets/ar.png') }}" alt="AR Navigation"
+                    class="w-full max-w-sm md:max-w-md object-cover">
             </div>
         </div>
     </section>
 
-    <!-- TEAM SLIDER SECTION -->
-    <!-- TEAM SLIDER SECTION -->
-<!-- TEAM SLIDER SECTION -->
-<!-- TEAM SLIDER SECTION -->
-<section class="relative w-full py-24">
-    <img src="{{ asset('assets/unej.webp') }}"
-         alt="Background"
-         class="absolute inset-0 w-full h-full object-cover opacity-80" />
-    <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-black/70"></div>
+    <!-- TEAM SECTION -->
+    <section class="relative w-full py-24">
+        <img src="{{ asset('assets/unej.webp') }}" alt="Background"
+            class="absolute inset-0 w-full h-full object-cover opacity-80" />
+        <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-black/70"></div>
 
-    <div class="relative max-w-5xl mx-auto bg-blur-sm backdrop-blur-md shadow-2xl rounded-2xl mt-20 py-10 px-6 md:px-12 z-10">
-        <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-800 mb-12">Our Team</h2>
+        <div class="relative max-w-5xl mx-auto shadow-2xl rounded-2xl mt-20 py-10 px-6 md:px-12 z-10 bg-white/70">
+            <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-800 mb-12">Our Team</h2>
 
-        <!-- Wrapper slider + tombol -->
-        <div class="relative">
-            <div class="swiper team-swiper relative">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <div class="flex flex-col md:flex-row items-center gap-10">
-                            <div class="md:w-3/5 order-2 md:order-1">
-                                <h3 class="text-2xl font-bold text-slate-700">
-                                    Prof. Dr. Ika Barokah Suryaningsih, S.E., M.M., CPIA., CHRM., CRP., QIA.
-                                </h3>
-                                <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-                                    "Virtual Reality (VR) is a computer-generated environment that simulates a real or imaginary world..."
-                                </p>
-                            </div>
-                            <div class="md:w-2/5 order-1 md:order-2 flex flex-col items-center">
-                                <div class="w-full max-w-[260px]">
-                                    <img src="{{ asset('assets/bunda.png') }}" alt="Prof Ika">
-                                </div>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+                <!-- Left (Text tetap) -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-700">
+                        Meet Our Professors
+                    </h3>
+                    <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+                        Experts and mentors who support the development of immersive tourism through VR and AR.
+                    </p>
+                </div>
+
+                <!-- Right (Swiper hanya gambar) -->
+                <div class="swiper team-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide flex justify-center">
+                            <img src="{{ asset('assets/bunda.png') }}" alt="Prof Ika" class="max-w-[260px]">
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <img src="{{ asset('assets/paksum.png') }}" alt="Prof Sumani" class="max-w-[260px]">
                         </div>
                     </div>
-
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <div class="flex flex-col md:flex-row items-center gap-10">
-                            <div class="md:w-3/5 order-2 md:order-1">
-                                <h3 class="text-2xl font-bold text-slate-700">
-                                    Prof. Dr. Sumani, S.E., M.Si., CRA.
-                                </h3>
-                                <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-                                    "Virtual Reality (VR) is a computer-generated environment that simulates a real or imaginary world..."
-                                </p>
-                            </div>
-                            <div class="md:w-2/5 order-1 md:order-2 flex flex-col items-center">
-                                <div class="w-full max-w-[260px]">
-                                    <img src="{{ asset('assets/paksum.png') }}" alt="Prof Sumani">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- End swiper-wrapper -->
-            </div>
-
-            <!-- Tombol Navigasi di bawah gambar slider -->
-            <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-6">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                    <!-- Nav & Pagination -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination mt-6"></div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-
-
-
+    </section>
 
     <!-- Swiper CSS & JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Custom Style -->
-    <style>
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #374151;
-            background: white;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all .3s ease;
-        }
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background: #facc15; /* amber-400 */
-            color: #111827;
-            transform: scale(1.1);
-        }
-        .swiper-button-next::after,
-        .swiper-button-prev::after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
-
     <!-- Init Swiper -->
     <script>
-        var swiper = new Swiper('.team-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 40,
+        var heroSwiper = new Swiper('.hero-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 7000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.hero-swiper .swiper-pagination',
+                type: 'fraction',
+            },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.hero-swiper .swiper-button-next',
+                prevEl: '.hero-swiper .swiper-button-prev',
+            },
+        });
+
+        var teamSwiper = new Swiper('.team-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.team-swiper .swiper-button-next',
+                prevEl: '.team-swiper .swiper-button-prev',
+            },
+            pagination: {
+                el: '.team-swiper .swiper-pagination',
+                clickable: true,
             },
         });
     </script>
