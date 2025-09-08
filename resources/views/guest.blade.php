@@ -7,8 +7,8 @@
     <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-blue-500 min-h-screen flex items-center justify-center">
-    <main class="w-full px-4">
+<body class="min-h-screen flex items-center justify-center">
+    <main class="w-full">
         @yield('content')
     </main>
 </body>

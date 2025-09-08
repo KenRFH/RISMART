@@ -11,6 +11,7 @@ Route::get('/', function () {
 });
 
 Route::get('/VR', [C_Home::class, 'VR'])->name('showVR');
+Route::get('vr_page/{judul}', [VRPageController::class, 'show'])->name('show');
 
 // Admin
 Route::get('admin/login', [AuthController::class, 'showLogin'])->name('login');
@@ -19,8 +20,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::prefix('vr_page')->name('vr_page.')->group(function(){
-        // menampilkan halaman artikel vr
-        Route::get('/', [VRPageController::class, 'index'])->name('index');
         // membuka halaman buat artikel baru
         Route::get('/create', [VRPageController::class, 'create'])->name('create');
         // menyimpan artikel baru
@@ -34,5 +33,4 @@ Route::middleware('auth')->group(function () {
         // mengembalikan artikel yang dihapus
         Route::put('/{id}/restore', [VRPageController::class, 'restore'])->name('restore');
     });
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 });

@@ -14,7 +14,12 @@
 
 <body>
     @include('components.navbar')
-    @yield('content')
+
+    <main>
+        @yield('content')
+    </main>
+
+    @stack('scripts')
 </body>
 
 </html>
