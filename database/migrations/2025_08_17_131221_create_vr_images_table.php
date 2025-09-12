@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('vr_images', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->text('text');
+            $table->text('deskripsi');
             $table->string('gambar');
             $table->timestamps();
         });

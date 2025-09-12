@@ -9,8 +9,5 @@ class VrImage extends Model
 {
     use HasFactory;
     protected $table = 'vr_images';
-
-    protected $fillable =[
-        'judul', 'text', 'gambar'
-    ];
+    protected $fillable = ['judul', 'deskripsi', 'gambar'];
 }

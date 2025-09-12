@@ -15,16 +15,16 @@ class ArtikelSeeder extends Seeder
     public function run(): void
     {
         VrImage::create([
-            'judul' => 'Agritourism A',
-            'text' => 'fox jumps over the lazy dog',
-            'gambar' => 'example360.jpg',
+            'judul' => 'Test Tempat A',
+            'deskripsi' => '<p>Test</p></p><p>test lagi</p>',
+            'gambar' => 'assets/vr_images/example360.jpg',
             'created_at' => now(),
             'updated_at' => now()
         ]);
         VrImage::create([
-            'judul' => 'Agritourism B',
-            'text' => 'fox jumps over the lazy dog fox jumps over the lazy dog',
-            'gambar' => 'example360.jpg',
+            'judul' => 'Test Tempat B',
+            'deskripsi' => 'fox jumps over the lazy dog fox jumps over the lazy dog',
+            'gambar' => 'assets/vr_images/example360.jpg',
             'created_at' => now(),
             'updated_at' => now()
         ]);

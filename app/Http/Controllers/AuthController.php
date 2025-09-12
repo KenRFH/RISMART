@@ -20,7 +20,6 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        // Ambil user admin dari database
         $admin = User::where('email', $request->email)->first();
 
         if ($admin && \Hash::check($request->password, $admin->password)) {

@@ -8,7 +8,7 @@ class C_Home extends Controller
 {
     public function VR()
     {
-        return view('home.vr');
+        return view('home.vr-page');
     }
 
 
