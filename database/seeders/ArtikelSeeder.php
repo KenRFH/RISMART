@@ -19,14 +19,16 @@ class ArtikelSeeder extends Seeder
             'deskripsi' => '<p>Test</p></p><p>test lagi</p>',
             'gambar' => 'assets/vr_images/example360.jpg',
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'isActive' => true,
         ]);
         VrImage::create([
             'judul' => 'Test Tempat B',
             'deskripsi' => 'fox jumps over the lazy dog fox jumps over the lazy dog',
             'gambar' => 'assets/vr_images/example360.jpg',
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'isActive' => true,
         ]);
     }
 }

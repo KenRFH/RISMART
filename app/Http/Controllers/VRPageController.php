@@ -9,15 +9,24 @@ class VRPageController extends Controller
 {
     public function index()
     {
-        $vrImages = VrImage::latest()->get();
-        return view('home.vr-cards', compact('vrImages'));
+        if (auth()->check()) {
+            $active = VrImage::where('isActive', true)
+            ->latest()->get();
+            $inactive = VrImage::where('isActive', false)
+            ->latest()->get();
+            $vrImages = $active->merge($inactive);
+
+            return view('admin.vr-cards', compact('vrImages'));
+        } else {
+            $vrImages = VrImage::where('isActive', true)->latest()->get();
+            return view('home.vr-cards', compact('vrImages'));
+        }
     }
 
     public function show($id)
     {
         $vrImage = VrImage::where('id', $id)->firstOrFail();
 
-        // Kirim ke view
         return view('home.vr-page', compact('vrImage'));
     }
 
@@ -49,26 +58,47 @@ class VRPageController extends Controller
 
         VrImage::create($data);
 
-        return redirect()->back()->with('success', 'Destinasi berhasil ditambahkan!');
+        return redirect()->route('vr_page.public.index')->with('success', 'Destinasi berhasil ditambahkan!');
     }
 
     public function edit($id)
     {
-
+        $vrImage = VrImage::findOrFail($id);
+        return view('admin.edit', compact('vrImage'));
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'judul' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'gambar' => 'required|string',
+        ]);
 
+        $vrImage = VrImage::findOrFail($id);
+        $vrImage->update([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'gambar' => $request->gambar,
+            'isActive' => $request->has('isActive'),
+        ]);
+
+        return redirect()->route('vr-images.index')->with('success', 'Data berhasil diperbarui.');
     }
 
     public function destroy($id)
     {
-
+        $item = VrImage::findOrFail($id);
+        $item->isActive = false;
+        $item->save();
+        return redirect()->back();
     }
 
     public function restore($id)
     {
-
+        $item = VrImage::findOrFail($id);
+        $item->isActive = true;
+        $item->save();
+        return redirect()->back();
     }
 }

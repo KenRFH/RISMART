@@ -3,7 +3,7 @@
         <div class="text-lg font-bold">Logo</div>
         <ul class="flex space-x-6">
             <li><a href="/" class="hover:underline font-poppins">Home</a></li>
-            <li><a href="/" class="hover:underline">VR</a></li>
+            <li><a href="{{ route('vr_page.public.index')}}" class="hover:underline">VR</a></li>
             <li><a href="/" class="hover:underline">AR</a></li>
         </ul>
     </div>

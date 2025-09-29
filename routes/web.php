@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
     Route::prefix('admin/vr_page')->name('vr_page.')->group(function(){
-        Route::get('/', [VRPageController::class, 'adminIndex'])->name('index'); // daftar untuk admin
+        // Route::get('/', [VRPageController::class, 'adminIndex'])->name('index');
         Route::get('/create', [VRPageController::class, 'create'])->name('create');
         Route::post('/', [VRPageController::class, 'store'])->name('store');
         Route::get('/{id}/edit', [VRPageController::class, 'edit'])->name('edit');

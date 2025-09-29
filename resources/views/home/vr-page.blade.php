@@ -4,20 +4,20 @@
 
 @section('content')
 <div class="container mx-auto pt-16 p-6">
-    <!-- Judul -->
+    {{-- Judul --}}
     <h1 class="text-3xl font-bold mb-4">{{ $vrImage->judul }}</h1>
 
-    <!-- Konten rich text (hasil TinyMCE) -->
+    {{-- Konten rich text (hasil TinyMCE) --}}
     <div class="prose max-w-none mb-6">
         {!! $vrImage->deskripsi !!}
     </div>
 
-    <!-- Info update -->
+    {{-- Info update --}}
     <p class="text-sm text-gray-400 mb-6">
-        Terakhir diupdate: {{ $vrImage->updated_at->format('d M Y') }}
+        Last Updated: {{ $vrImage->updated_at->format('d M Y') }}
     </p>
 
-    <!-- VR Container -->
+    {{-- VR Container --}}
     <div id="vr-container" class="w-full h-[600px] rounded shadow-lg overflow-hidden"></div>
 </div>
 
